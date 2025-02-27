@@ -26,11 +26,12 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     overflow: 'hidden',
     backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   profileImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: '100%',
+    height: '100%',
     resizeMode: 'cover',
   },
   name: {
