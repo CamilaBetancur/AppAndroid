@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
@@ -6,7 +5,7 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('.../src/assets/imageAvatar.png')}
+        source={require('.../assets/imageAvatar.png')}
         style={styles.profileImage}
       />
       <Text style={styles.name}>Name</Text>

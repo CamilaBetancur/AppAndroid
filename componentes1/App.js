@@ -1,4 +1,3 @@
-// src/App.tsx
 import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import Card from './components/Card';
