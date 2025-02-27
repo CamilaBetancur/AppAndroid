@@ -1,23 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// src/App.tsx
+import React from 'react';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import Card from './components/Card';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style= {styles.texto}>Open up App.js to start working on your app!</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Card />
+        <Footer />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: '#F0F0F0',
+  },
+  scrollContainer: {
+    flexGrow: 1,
     justifyContent: 'center',
   },
-  texto: {
-    fontSize: 20,
-    color: '#333'
-  }
 });
