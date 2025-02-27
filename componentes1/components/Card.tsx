@@ -1,7 +1,11 @@
-// src/components/Card.tsx
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from './Header';
+
+const interests = [
+  'music', 'food', 'culture', 'drinks', 
+  'sport', 'travel', 'fun', 'business', 'art'
+];
 
 const Card = () => {
   return (
@@ -11,12 +15,20 @@ const Card = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
       </Text>
       <View style={styles.interestsContainer}>
-        <Text style={styles.interestsTitle}>My interests</Text>
         <View style={styles.line} />
+        <Text style={styles.interestsTitle}>My interests</Text>
+        <View style={styles.tagsContainer}>
+          {interests.map((item, index) => (
+            <View key={index} style={styles.tag}>
+              <Text style={styles.tagText}>{item}</Text>
+            </View>
+          ))}
+        </View>
       </View>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -42,12 +54,31 @@ const styles = StyleSheet.create({
   interestsTitle: {
     fontWeight: 'bold',
     fontSize: 16,
+    marginTop: 5,
   },
   line: {
     width: '80%',
     height: 2,
     backgroundColor: '#00C2CB',
     marginTop: 5,
+  },
+  tagsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: 10,
+  },
+  tag: {
+    backgroundColor: 'white',
+    borderColor: '#FFD700',
+    borderWidth: 1,
+    borderRadius: 20,
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    margin: 5,
+  },
+  tagText: {
+    color: '#000000',
   },
 });
 

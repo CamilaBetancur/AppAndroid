@@ -4,10 +4,12 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 const Header = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.imageWrapper}>
       <Image
         source={require('../assets/imageAvatar.png')}
         style={styles.profileImage}
       />
+      </View>
       <Text style={styles.name}>Name</Text>
     </View>
   );
@@ -18,12 +20,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10,
   },
+  imageWrapper: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    overflow: 'hidden',
+    backgroundColor: 'white',
+  },
   profileImage: {
     width: 80,
     height: 80,
     borderRadius: 40,
-    borderWidth: 2,
-    borderColor: '#FFDD59',
+    resizeMode: 'cover',
   },
   name: {
     fontWeight: 'bold',
